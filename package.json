@@ -1,0 +1,32 @@
+{
+  "name": "thinker3197.github.io",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thinker3197/thinker3197.github.io.git"
+  },
+  "keywords": [
+    "website",
+    "thinker3197",
+    "ashish",
+    "portfolio"
+  ],
+  "author": "thinker3197",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thinker3197/thinker3197.github.io/issues"
+  },
+  "homepage": "https://github.com/thinker3197/thinker3197.github.io#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

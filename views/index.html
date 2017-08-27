@@ -1,0 +1,154 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Design+Code</title>
+  <meta name="description" content="Ashish's little space on the internet..">
+  <meta name=keywords content="Ashish, thinker3197, portfolio, terminal, developer">
+  <meta name=author content="Ashish Gupta">
+  <meta content="Ashish's Portfolio" property=og:title>
+  <meta content=article property=og:type>
+  <meta content=http://thinker3197.github.io/img/profile.jpg property=og:image>
+  <meta content=http://thinker3197.github.io property=og:url>
+  <meta content="Ashish's little space on the internet.." property=og:description>
+  <meta content="Ashish's portfolio" name=twitter:card>
+  <meta content="Design+Code" name=twitter:title>
+  <meta content="Ashish's little space on the internet.." name=twitter:description>
+  <meta content=http://thinker3197.github.io.com/img/profile.jpg name=twitter:image>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="img/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900|Lora">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+  <script>
+  (function(w) {
+    "use strict";
+    var loadCSS = function(href, before, media) {
+      var doc = w.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function() {
+          ready(cb);
+        });
+      }
+      ready(function() {
+        ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
+      });
+      var onloadcssdefined = function(cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function() {
+          onloadcssdefined(cb);
+        });
+      };
+
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    };
+    if (typeof exports !== "undefined") {
+      exports.loadCSS = loadCSS;
+    } else {
+      w.loadCSS = loadCSS;
+    }
+  }(typeof global !== "undefined" ? global : this));
+  loadCSS("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+  </script>
+</head>
+
+<body>
+  <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+  <nav id="js-internal-nav" class="navbar navbar--top fixed">
+    <ul class="navbar__list margin--auto">
+      <li class="list-item" id="js-blog-nav">
+        <a>Blog</a>
+      </li>
+      <li class="list-item">
+        <a>Resume</a>
+      </li>
+      <li class="list-item">
+        <a>Work</a>
+      </li>
+      <li class="list-item">
+        <a>Contact</a>
+      </li>
+    </ul>
+  </nav>
+  <div id="content" class="content pos--relative">
+    <div id="js-home-view" class="content__home full-hw pos--absolute hidden">
+      <div class="home-view">
+        <h1 class="heading">Ashish Gupta</h1>
+        <span class="title">Frontend Engineer</span>
+        <p class="description">Passionate developer with love for well architected software and inspiring design. I am a college junior by day and a frontend ninja by night. I take things about <span class="bg-highligted">javascript</span> very seriously 👋🏻</p>
+        <div class="btn btn-greeting" id="js-greeting-btn">Namaste</div>
+      </div>
+    </div>
+    <div id="js-blog-view" class="content__blog full-hw pos--absolute hidden">
+    <div class="home-view">
+        <h1 class="heading">Ashish Gupta</h1>
+        <span class="title">Frontend Engineer</span>
+        <p class="description">Passionate developer with love for well architected software and inspiring design. I am a college junior by day and a frontend ninja by night. I take things about <span class="bg-highligted">javascript</span> very seriously 👋🏻</p>
+        <div class="btn btn-greeting" id="js-greeting-btn">Namaste</div>
+      </div>
+    </div>
+  </div>
+  <nav id="js-external-nav" class="navbar navbar--side fixed">
+    <ul class="navbar__list margin--auto">
+      <li class="list-item">
+        <i class="icon fa fa-github"></i>
+      </li>
+      <li class="list-item">
+        <i class="icon fa fa-linkedin"></i>
+      </li>
+      <li class="list-item">
+        <i class="icon fa fa-twitter"></i>
+      </li>
+      <li class="list-item">
+        <i class="icon fa fa-instagram"></i>
+      </li>
+    </ul>
+  </nav>
+  <!-- scripts -->
+  <script src="js/vendor/navigo.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
