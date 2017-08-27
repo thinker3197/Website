@@ -1,20 +1,27 @@
 $tablet-width: 768px;
-$desktop-width: 1024px;
-$head-font: 'Avenir',
-sans-serif;
-$text-font: 'Charter',
-serif;
+$desktop-width: 1440px;
+$head-font: 'Avenir Black', sans-serif;
+$sub-font: 'Avenir', sans-serif;
+$text-font: 'Charter', serif;
 $sidenav-bg: #F6F6F6;
 $topnav-bg: #FFFFFF;
+$search-bg: #F9F9F9;
+$black: #000000;
+$white: #FFFFFF;
 
 @font-face {
-  font-family: Avenir;
-  src: url("Avenir/AvenirLTStd-Book.otf") format("opentype");
+  font-family: "Avenir";
+  src: url("../fonts/AvenirLTStd-Book.otf") format("opentype");
 }
 
 @font-face {
-  font-family: Charter;
-  src: url("Charter.ttf") format("truetype");
+  font-family: "Avenir Black";
+  src: url("../fonts/AvenirLT-95 Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Charter";
+  src: url("../fonts/Charter.ttf") format("truetype");
 }
 
 @mixin tablet {
@@ -39,6 +46,7 @@ $topnav-bg: #FFFFFF;
     background: $topnav-bg;
     border-bottom: 2px solid #FBFBFB;
     top: 0;
+    z-index: 123;
     .navbar__list {
       .list-item {
         width: 25%;
@@ -80,6 +88,7 @@ $topnav-bg: #FFFFFF;
   &--side {
     background: $sidenav-bg;
     bottom: 0;
+    z-index: 124;
     .navbar__list {
       @include desktop {
         height: 35%;
@@ -114,8 +123,8 @@ $topnav-bg: #FFFFFF;
   list-style: none;
   .list-item {
     /* background: #e11; */
-    font-family: $head-font;
-    font-size: 18px;
+    font-family: $sub-font;
+    font-size: 17px;
     .icon {
       font-size: 35px;
       @include desktop {
@@ -147,7 +156,7 @@ $topnav-bg: #FFFFFF;
       }
       .title {
         color: #8E8E8E;
-        font-family: $head-font;
+        font-family: $sub-font;
         font-size: 18px;
         font-weight: 300;
       }
@@ -173,7 +182,99 @@ $topnav-bg: #FFFFFF;
       }
     }
   }
-  &__blog {
+  &__blog{
+    .blog-view {
+      overflow: scroll;
+      height: calc(100vh - 160px);  
+      max-width: 600px;
+      padding: 20px 30px;
+      .blog-head {
+        text-align: center;
+        h2 {
+          font-family: $head-font;
+          font-size: 30px;
+        }
+        .search-bar {
+          background: $search-bg;
+          border-radius: 50px;
+          font-family: $sub-font;
+          margin: 20px 0;
+          position: relative;
+          width: 300px;
+          height: 50px;
+          input {
+            height: 100%;
+            width: 70%;
+            position: absolute;
+            left: 10%;
+            &::placeholder {
+              color: $black;
+            }
+          }
+          .search-icon {
+            background: url('../images/search-icon.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            width: 20%;
+          }
+        }
+        @include desktop {
+          display: flex; 
+          justify-content: space-between;
+          align-items: center;
+        }
+        @include tablet {
+          display: flex; 
+          justify-content: space-between;
+          align-items: center;
+        };
+      }
+      .blog-list {
+        ul {
+          list-style: none;  
+        }
+        .list-item {
+          margin-bottom: 20px;
+         }
+        .list-head {
+          font-family: $head-font;
+          margin-bottom: 10px;
+          @include desktop {
+            font-size: 22px;
+          }
+          @include tablet {
+            font-size: 22px;
+          }
+        }
+        .list-date {
+          color: #8E8E8E;
+          font-family: $sub-font;
+          margin-bottom: 5px;
+        }
+        .list-desc {
+          font-family: $text-font;
+        }
+        @include desktop {
+          margin-top: 30px;
+        }
+        @include tablet {
+          margin-top: 30px;
+        }
+      }
+      @include desktop {
+        max-width: 100vw;
+        height: calc(100vh - 80px);
+        padding: 50px 200px;
+      }
+      @include tablet {
+        max-width: 100vw;
+        height: calc(100vh - 80px);
+        padding: 50px 100px;
+      }
+    }
   }
   @include desktop {
     width: calc(100% - 80px);
@@ -198,10 +299,10 @@ $topnav-bg: #FFFFFF;
     transform: translateY(-0.25em);
   }
   &-greeting {
-    background: #000000;
-    color: #ffffff;
+    background: $black;
+    color: $white;
     position: relative;
-    font-family: $head-font;
+    font-family: $sub-font;
     margin-top: 30px;
     @include desktop {
       margin-top: 40px;

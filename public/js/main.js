@@ -18,6 +18,8 @@
         $blogView.classList.remove('hidden');
         $blogNav.classList.add('active');
         $homeView.classList.add('hidden');
+
+        populateBlog();
       }
     }).resolve();
   }
@@ -31,6 +33,35 @@
 
         router.navigate(route);
       }
+    });
+  }
+
+  function getBlogMetadata() {
+    return new Promise(function(resolve, reject) {
+      const url = '/api/posts';
+      const xhr = new XMLHttpRequest();
+
+      xhr.open('GET', url);
+      xhr.onload = function() {
+        if(this.status >= 200 && this.status < 300) {
+          resolve(xhr.response);
+        }
+        else {
+          reject();
+        }
+      };
+      xhr.onerror = function() {
+        reject();
+      };
+      xhr.send();
+    });
+  }
+
+  function populateBlog() {
+    getBlogMetadata().then(function(response) {
+
+    }, function(){
+      console.error('Whoops! An error occured');
     });
   }
 
