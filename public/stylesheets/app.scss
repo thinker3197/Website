@@ -1,14 +1,16 @@
 $tablet-width: 768px;
 $desktop-width: 1440px;
-$head-font: 'Avenir Black', sans-serif;
-$sub-font: 'Avenir', sans-serif;
-$text-font: 'Charter', serif;
+$head-font: 'Avenir Black',
+sans-serif;
+$sub-font: 'Avenir',
+sans-serif;
+$text-font: 'Charter',
+serif;
 $sidenav-bg: #F6F6F6;
 $topnav-bg: #FFFFFF;
 $search-bg: #F9F9F9;
 $black: #000000;
 $white: #FFFFFF;
-
 @font-face {
   font-family: "Avenir";
   src: url("../fonts/AvenirLTStd-Book.otf") format("opentype");
@@ -182,10 +184,10 @@ $white: #FFFFFF;
       }
     }
   }
-  &__blog{
+  &__blog {
     .blog-view {
       overflow: scroll;
-      height: calc(100vh - 160px);  
+      height: calc(100vh - 160px);
       max-width: 600px;
       padding: 20px 30px;
       .blog-head {
@@ -198,10 +200,10 @@ $white: #FFFFFF;
           background: $search-bg;
           border-radius: 50px;
           font-family: $sub-font;
-          margin: 20px 0;
+          margin: 20px auto;
           position: relative;
-          width: 300px;
-          height: 50px;
+          width: 280px;
+          height: 45px;
           input {
             height: 100%;
             width: 70%;
@@ -220,28 +222,45 @@ $white: #FFFFFF;
             right: 0;
             width: 20%;
           }
+          @include desktop {
+            margin: 20px 0;
+          }
+          @include tablet {
+            margin: 20px 0;
+          }
         }
         @include desktop {
-          display: flex; 
+          display: flex;
           justify-content: space-between;
           align-items: center;
         }
         @include tablet {
-          display: flex; 
+          display: flex;
           justify-content: space-between;
           align-items: center;
-        };
+        }
+        ;
       }
       .blog-list {
         ul {
-          list-style: none;  
+          list-style: none;
         }
         .list-item {
-          margin-bottom: 20px;
-         }
+          margin-bottom: 30px;
+          &:hover {
+            cursor: pointer;
+            .list-head {
+              color: #008CEC;
+            }
+            .list-links {
+              opacity: 1;
+            }
+          }
+        }
         .list-head {
           font-family: $head-font;
           margin-bottom: 10px;
+          transition: all 0.2s;
           @include desktop {
             font-size: 22px;
           }
@@ -256,6 +275,12 @@ $white: #FFFFFF;
         }
         .list-desc {
           font-family: $text-font;
+        }
+        .list-links {
+          color: #008CEC;
+          opacity: 0;
+          float: right;
+          transition: all 0.2s;
         }
         @include desktop {
           margin-top: 30px;

@@ -27,67 +27,67 @@
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css">
   <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
   <script>
-  (function(w) {
-    "use strict";
-    var loadCSS = function(href, before, media) {
-      var doc = w.document;
-      var ss = doc.createElement("link");
-      var ref;
-      if (before) {
-        ref = before;
-      } else {
-        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
-        ref = refs[refs.length - 1];
-      }
-      var sheets = doc.styleSheets;
-      ss.rel = "stylesheet";
-      ss.href = href;
-      ss.media = "only x";
-
-      function ready(cb) {
-        if (doc.body) {
-          return cb();
+    (function (w) {
+      "use strict";
+      var loadCSS = function (href, before, media) {
+        var doc = w.document;
+        var ss = doc.createElement("link");
+        var ref;
+        if (before) {
+          ref = before;
+        } else {
+          var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+          ref = refs[refs.length - 1];
         }
-        setTimeout(function() {
-          ready(cb);
-        });
-      }
-      ready(function() {
-        ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
-      });
-      var onloadcssdefined = function(cb) {
-        var resolvedHref = ss.href;
-        var i = sheets.length;
-        while (i--) {
-          if (sheets[i].href === resolvedHref) {
+        var sheets = doc.styleSheets;
+        ss.rel = "stylesheet";
+        ss.href = href;
+        ss.media = "only x";
+
+        function ready(cb) {
+          if (doc.body) {
             return cb();
           }
+          setTimeout(function () {
+            ready(cb);
+          });
         }
-        setTimeout(function() {
-          onloadcssdefined(cb);
+        ready(function () {
+          ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
         });
-      };
+        var onloadcssdefined = function (cb) {
+          var resolvedHref = ss.href;
+          var i = sheets.length;
+          while (i--) {
+            if (sheets[i].href === resolvedHref) {
+              return cb();
+            }
+          }
+          setTimeout(function () {
+            onloadcssdefined(cb);
+          });
+        };
 
-      function loadCB() {
-        if (ss.addEventListener) {
-          ss.removeEventListener("load", loadCB);
+        function loadCB() {
+          if (ss.addEventListener) {
+            ss.removeEventListener("load", loadCB);
+          }
+          ss.media = media || "all";
         }
-        ss.media = media || "all";
+        if (ss.addEventListener) {
+          ss.addEventListener("load", loadCB);
+        }
+        ss.onloadcssdefined = onloadcssdefined;
+        onloadcssdefined(loadCB);
+        return ss;
+      };
+      if (typeof exports !== "undefined") {
+        exports.loadCSS = loadCSS;
+      } else {
+        w.loadCSS = loadCSS;
       }
-      if (ss.addEventListener) {
-        ss.addEventListener("load", loadCB);
-      }
-      ss.onloadcssdefined = onloadcssdefined;
-      onloadcssdefined(loadCB);
-      return ss;
-    };
-    if (typeof exports !== "undefined") {
-      exports.loadCSS = loadCSS;
-    } else {
-      w.loadCSS = loadCSS;
-    }
-  }(typeof global !== "undefined" ? global : this));
-  loadCSS("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+    }(typeof global !== "undefined" ? global : this));
+    loadCSS("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
   </script>
 </head>
 
@@ -117,7 +117,8 @@
       <div class="home-view">
         <h1 class="heading">Ashish Gupta</h1>
         <span class="title">Frontend Engineer</span>
-        <p class="description">Passionate developer with love for well architected software and inspiring design. I am a college junior by day and a frontend ninja by night. I take things about <span class="bg-highligted">javascript</span> very seriously 👋🏻</p>
+        <p class="description">Passionate developer with love for well architected software and inspiring design. I am a college junior by day and
+          a frontend ninja by night. I take things about <span class="bg-highligted">javascript</span> very seriously 👋🏻</p>
         <div class="btn btn-greeting" id="js-greeting-btn">Namaste</div>
       </div>
     </div>
@@ -133,34 +134,64 @@
         <div class="blog-list">
           <ul>
             <li class="list-item">
-              <h3 class="list-head">Internship experience @ Wingify</h3>
-              <p class="list-date">12th August, 2017</p>
-              <p class="list-desc">I came to know about Wingify in January when Web Maker was featured on codepen blog. It was an awesome project and I found about Kushagra and went through his talks @ CSS conf, Asia (Ps I am a brilliant stalker). I went through Wingify’s products and saw their open source projects</p>
+              <div class="list-content">
+                <h3 class="list-head">Internship experience @ Wingify</h3>
+                <p class="list-date">12th August, 2017</p>
+                <p class="list-desc">I came to know about Wingify in January when Web Maker was featured on codepen blog. It was an awesome project
+                  and I found about Kushagra and went through his talks @ CSS conf, Asia (Ps I am a brilliant stalker). I
+                  went through Wingify’s products and saw their open source projects</p>
+              </div>
+              <div class="list-links">
+                <i class="icon fa fa-external-link"></i>
+              </div>
             </li>
             <li class="list-item">
-              <h3 class="list-head">Internship experience @ Wingify</h3>
-              <p class="list-date">12th August, 2017</p>
-              <p class="list-desc">I came to know about Wingify in January when Web Maker was featured on codepen blog. It was an awesome project and I found about Kushagra and went through his talks @ CSS conf, Asia (Ps I am a brilliant stalker). I went through Wingify’s products and saw their open source projects</p>
+              <div class="list-content">
+                <h3 class="list-head">Internship experience @ Wingify</h3>
+                <p class="list-date">12th August, 2017</p>
+                <p class="list-desc">I came to know about Wingify in January when Web Maker was featured on codepen blog. It was an awesome project
+                  and I found about Kushagra and went through his talks @ CSS conf, Asia (Ps I am a brilliant stalker). I
+                  went through Wingify’s products and saw their open source projects</p>
+              </div>
+              <div class="list-links">
+                <i class="icon fa fa-external-link"></i>
+              </div>
             </li>
             <li class="list-item">
-              <h3 class="list-head">Internship experience @ Wingify</h3>
-              <p class="list-date">12th August, 2017</p>
-              <p class="list-desc">I came to know about Wingify in January when Web Maker was featured on codepen blog. It was an awesome project and I found about Kushagra and went through his talks @ CSS conf, Asia (Ps I am a brilliant stalker). I went through Wingify’s products and saw their open source projects</p>
+              <div class="list-content">
+                <h3 class="list-head">Internship experience @ Wingify</h3>
+                <p class="list-date">12th August, 2017</p>
+                <p class="list-desc">I came to know about Wingify in January when Web Maker was featured on codepen blog. It was an awesome project
+                  and I found about Kushagra and went through his talks @ CSS conf, Asia (Ps I am a brilliant stalker). I
+                  went through Wingify’s products and saw their open source projects</p>
+              </div>
+              <div class="list-links">
+                <i class="icon fa fa-external-link"></i>
+              </div>
             </li>
             <li class="list-item">
-              <h3 class="list-head">Internship experience @ Wingify</h3>
-              <p class="list-date">12th August, 2017</p>
-              <p class="list-desc">I came to know about Wingify in January when Web Maker was featured on codepen blog. It was an awesome project and I found about Kushagra and went through his talks @ CSS conf, Asia (Ps I am a brilliant stalker). I went through Wingify’s products and saw their open source projects</p>
+              <div class="list-content">
+                <h3 class="list-head">Internship experience @ Wingify</h3>
+                <p class="list-date">12th August, 2017</p>
+                <p class="list-desc">I came to know about Wingify in January when Web Maker was featured on codepen blog. It was an awesome project
+                  and I found about Kushagra and went through his talks @ CSS conf, Asia (Ps I am a brilliant stalker). I
+                  went through Wingify’s products and saw their open source projects</p>
+              </div>
+              <div class="list-links">
+                <i class="icon fa fa-external-link"></i>
+              </div>
             </li>
             <li class="list-item">
-              <h3 class="list-head">Internship experience @ Wingify</h3>
-              <p class="list-date">12th August, 2017</p>
-              <p class="list-desc">I came to know about Wingify in January when Web Maker was featured on codepen blog. It was an awesome project and I found about Kushagra and went through his talks @ CSS conf, Asia (Ps I am a brilliant stalker). I went through Wingify’s products and saw their open source projects</p>
-            </li>
-            <li class="list-item">
-              <h3 class="list-head">Internship experience @ Wingify</h3>
-              <p class="list-date">12th August, 2017</p>
-              <p class="list-desc">I came to know about Wingify in January when Web Maker was featured on codepen blog. It was an awesome project and I found about Kushagra and went through his talks @ CSS conf, Asia (Ps I am a brilliant stalker). I went through Wingify’s products and saw their open source projects</p>
+              <div class="list-content">
+                <h3 class="list-head">Internship experience @ Wingify</h3>
+                <p class="list-date">12th August, 2017</p>
+                <p class="list-desc">I came to know about Wingify in January when Web Maker was featured on codepen blog. It was an awesome project
+                  and I found about Kushagra and went through his talks @ CSS conf, Asia (Ps I am a brilliant stalker). I
+                  went through Wingify’s products and saw their open source projects</p>
+              </div>
+              <div class="list-links">
+                <i class="icon fa fa-external-link"></i>
+              </div>
             </li>
           </ul>
         </div>

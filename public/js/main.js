@@ -1,4 +1,4 @@
-(function() {
+(function () {
   var root = 'http://localhost:3000';
   var router = new Navigo(root);
 
@@ -9,12 +9,12 @@
     var $blogNav = document.getElementById('js-blog-nav');
 
     router.on({
-      '/': function() {
+      '/': function () {
         $blogView.classList.add('hidden');
         $blogNav.classList.remove('active');
         $homeView.classList.remove('hidden');
       },
-      '/blog': function() {
+      '/blog': function () {
         $blogView.classList.remove('hidden');
         $blogNav.classList.add('active');
         $homeView.classList.add('hidden');
@@ -37,20 +37,19 @@
   }
 
   function getBlogMetadata() {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
       const url = '/api/posts';
       const xhr = new XMLHttpRequest();
 
       xhr.open('GET', url);
-      xhr.onload = function() {
-        if(this.status >= 200 && this.status < 300) {
+      xhr.onload = function () {
+        if (this.status >= 200 && this.status < 300) {
           resolve(xhr.response);
-        }
-        else {
+        } else {
           reject();
         }
       };
-      xhr.onerror = function() {
+      xhr.onerror = function () {
         reject();
       };
       xhr.send();
@@ -58,15 +57,15 @@
   }
 
   function populateBlog() {
-    getBlogMetadata().then(function(response) {
+    getBlogMetadata().then(function (response) {
 
-    }, function(){
+    }, function () {
       console.error('Whoops! An error occured');
     });
   }
 
   function init() {
-    document.addEventListener("DOMContentLoaded", function(event) {
+    document.addEventListener("DOMContentLoaded", function (event) {
       activateRouter();
       activateNavbar();
 

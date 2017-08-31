@@ -149,10 +149,10 @@
         background: #F9F9F9;
         border-radius: 50px;
         font-family: "Avenir", sans-serif;
-        margin: 20px 0;
+        margin: 20px auto;
         position: relative;
-        width: 300px;
-        height: 50px; }
+        width: 280px;
+        height: 45px; }
         .content__blog .blog-view .blog-head .search-bar input {
           height: 100%;
           width: 70%;
@@ -168,6 +168,12 @@
           position: absolute;
           right: 0;
           width: 20%; }
+        @media (min-width: 1440px) {
+          .content__blog .blog-view .blog-head .search-bar {
+            margin: 20px 0; } }
+        @media (min-width: 768px) and (max-width: 1439px) {
+          .content__blog .blog-view .blog-head .search-bar {
+            margin: 20px 0; } }
       @media (min-width: 1440px) {
         .content__blog .blog-view .blog-head {
           display: flex;
@@ -181,10 +187,17 @@
     .content__blog .blog-view .blog-list ul {
       list-style: none; }
     .content__blog .blog-view .blog-list .list-item {
-      margin-bottom: 20px; }
+      margin-bottom: 30px; }
+      .content__blog .blog-view .blog-list .list-item:hover {
+        cursor: pointer; }
+        .content__blog .blog-view .blog-list .list-item:hover .list-head {
+          color: #008CEC; }
+        .content__blog .blog-view .blog-list .list-item:hover .list-links {
+          opacity: 1; }
     .content__blog .blog-view .blog-list .list-head {
       font-family: "Avenir Black", sans-serif;
-      margin-bottom: 10px; }
+      margin-bottom: 10px;
+      transition: all 0.2s; }
       @media (min-width: 1440px) {
         .content__blog .blog-view .blog-list .list-head {
           font-size: 22px; } }
@@ -197,6 +210,11 @@
       margin-bottom: 5px; }
     .content__blog .blog-view .blog-list .list-desc {
       font-family: "Charter", serif; }
+    .content__blog .blog-view .blog-list .list-links {
+      color: #008CEC;
+      opacity: 0;
+      float: right;
+      transition: all 0.2s; }
     @media (min-width: 1440px) {
       .content__blog .blog-view .blog-list {
         margin-top: 30px; } }
