@@ -36,6 +36,24 @@
     });
   }
 
+  function tt() {
+    var $tt = document.getElementById('js-tt');
+    var $target = document.getElementsByClassName('tt--target');
+
+    for(var i=0; i<$target.length; ++i) {
+      $target[i].addEventListener('mouseover', function(e) {
+        $tt.style.top = (e.target.offsetTop - 80) + 'px';
+        $tt.style.left = (e.target.offsetLeft + 45) + 'px';
+        $tt.lastElementChild.innerHTML = e.target.dataset.ttText;
+        $tt.classList.remove('hidden');
+      });
+
+      $target[i].addEventListener('mouseleave', function(e) {
+        $tt.classList.add('hidden');
+      });
+    }
+  }
+
   function getBlogMetadata() {
     return new Promise(function (resolve, reject) {
       const url = '/api/posts';
@@ -68,6 +86,7 @@
     document.addEventListener("DOMContentLoaded", function (event) {
       activateRouter();
       activateNavbar();
+      tt();
 
       router.disableIfAPINotAvailable()
     });
