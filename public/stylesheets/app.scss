@@ -128,6 +128,7 @@ body {
   justify-content: space-around;
   list-style: none;
   .list-item {
+    cursor: pointer;
     /* background: #e11; */
     font-family: $sub-font;
     font-size: 17px;
@@ -323,7 +324,7 @@ body {
     color: #fff;
     font-family: Avenir;
     position: relative;
-    background: #000000;
+    background: $black;
     width: 88px;
     height: 30px;
     display: flex;
@@ -338,7 +339,7 @@ body {
       left: -5%;
       transform: rotate(135deg);
       top: calc(35%);
-      border: 4px solid #000000;
+      border: 4px solid $black;
     }
   }
   @include desktop {
@@ -364,6 +365,7 @@ body {
   &-greeting {
     background: $black;
     color: $white;
+    cursor: pointer;
     position: relative;
     font-family: $sub-font;
     margin-top: 30px;
