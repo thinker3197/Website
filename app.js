@@ -3,10 +3,10 @@ const app = express();
 const sassMiddleware = require('node-sass-middleware');
 const path = require('path');
 const data = {
-  totalCount: 12,
+  totalCount: 5,
   currentCount: 5,
   from: 0,
-  to: 3
+  to: 5,
   posts: [{
     title: 'Internship experience @ Wingify',
     dateOfPublish: '12th August, 2017',
@@ -52,7 +52,16 @@ app.get('/blog', function(req, res) {
 });
 
 app.get('/api/posts', function(req, res) {
+  var query = res.query;
+
+  query.from = query.from || 0;
+  query.to = query.to || data.totalCount;
+
   res.json(data);
+});
+
+app.get('*', function(req, res) {
+  res.send('404');
 });
 
 app.listen(3000, function() {

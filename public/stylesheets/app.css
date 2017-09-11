@@ -11,7 +11,10 @@
   src: url("../fonts/Charter.ttf") format("truetype"); }
 
 body {
-  position: relative; }
+  position: relative;
+  -webkit-text-size-adjust: none;
+  text-rendering: optimizeLegibility !important;
+  -moz-osx-font-smoothing: grayscale; }
 
 .navbar {
   height: 80px;

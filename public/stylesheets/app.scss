@@ -40,9 +40,12 @@ $white: #FFFFFF;
 
 body {
   position: relative;
+  -webkit-text-size-adjust: none;
+  // -webkit-font-smoothing: antialiased!important;
+  text-rendering: optimizeLegibility!important;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-// @include fontFace('Avenir', 'Avenir Free');
 .navbar {
   height: 80px;
   left: 0;
