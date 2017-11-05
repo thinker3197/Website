@@ -27,8 +27,8 @@ body {
     top: 0;
     z-index: 123; }
     .navbar--top .navbar__list .list-item {
-      width: 25%;
-      padding: 3%;
+      width: 35%;
+      padding: 5%;
       text-align: center; }
       .navbar--top .navbar__list .list-item:hover {
         cursor: pointer;
@@ -44,40 +44,40 @@ body {
         background-repeat: no-repeat;
         background-position: top;
         display: inline-block; }
-    @media (min-width: 1440px) {
+    @media (min-width: 1024px) {
       .navbar--top .navbar__list {
         width: 25%;
         margin-left: 70%; } }
-    @media (min-width: 768px) and (max-width: 1439px) {
+    @media (min-width: 768px) and (max-width: 1023px) {
       .navbar--top .navbar__list {
         width: 40%;
         margin-left: 55%; } }
-    @media (min-width: 1440px) {
+    @media (min-width: 1024px) {
       .navbar--top {
         border: none; } }
-    @media (min-width: 768px) and (max-width: 1439px) {
+    @media (min-width: 768px) and (max-width: 1023px) {
       .navbar--top {
         border: none; } }
   .navbar--side {
     background: #F6F6F6;
     bottom: 0;
     z-index: 124; }
-    @media (min-width: 1440px) {
+    @media (min-width: 1024px) {
       .navbar--side .navbar__list {
         height: 35%;
         margin-top: 62vh;
         flex-direction: column; } }
-    @media (min-width: 768px) and (max-width: 1439px) {
+    @media (min-width: 768px) and (max-width: 1023px) {
       .navbar--side .navbar__list {
         height: 30%;
         margin-top: 65vh;
         flex-direction: column; } }
-    @media (min-width: 1440px) {
+    @media (min-width: 1024px) {
       .navbar--side {
         height: 100%;
         left: 0;
         width: 80px; } }
-    @media (min-width: 768px) and (max-width: 1439px) {
+    @media (min-width: 768px) and (max-width: 1023px) {
       .navbar--side {
         height: 100%;
         left: 0;
@@ -97,7 +97,7 @@ body {
     font-size: 17px; }
     .navbar__list .list-item .icon {
       font-size: 35px; }
-      @media (min-width: 1440px) {
+      @media (min-width: 1024px) {
         .navbar__list .list-item .icon {
           font-size: 30px; } }
 
@@ -112,10 +112,10 @@ body {
       font-family: "Avenir Black", sans-serif;
       font-size: 40px;
       font-weight: 900; }
-      @media (min-width: 1440px) {
+      @media (min-width: 1024px) {
         .content__home .home-view .heading {
           font-size: 60px; } }
-      @media (min-width: 768px) and (max-width: 1439px) {
+      @media (min-width: 768px) and (max-width: 1023px) {
         .content__home .home-view .heading {
           font-size: 50px; } }
     .content__home .home-view .title {
@@ -127,19 +127,19 @@ body {
       font-family: "Charter", serif;
       margin-top: 15px;
       line-height: 1.8; }
-      @media (min-width: 1440px) {
+      @media (min-width: 1024px) {
         .content__home .home-view .description {
           line-height: 2;
           font-size: 18px; } }
-      @media (min-width: 768px) and (max-width: 1439px) {
+      @media (min-width: 768px) and (max-width: 1023px) {
         .content__home .home-view .description {
           line-height: 2;
           font-size: 18px; } }
-    @media (min-width: 1440px) {
+    @media (min-width: 1024px) {
       .content__home .home-view {
         max-width: 920px;
         padding: 200px 200px; } }
-    @media (min-width: 768px) and (max-width: 1439px) {
+    @media (min-width: 768px) and (max-width: 1023px) {
       .content__home .home-view {
         padding: 350px 100px; } }
   .content__blog .blog-view {
@@ -175,18 +175,18 @@ body {
           position: absolute;
           right: 0;
           width: 20%; }
-        @media (min-width: 1440px) {
+        @media (min-width: 1024px) {
           .content__blog .blog-view .blog-head .search-bar {
             margin: 20px 0; } }
-        @media (min-width: 768px) and (max-width: 1439px) {
+        @media (min-width: 768px) and (max-width: 1023px) {
           .content__blog .blog-view .blog-head .search-bar {
             margin: 20px 0; } }
-      @media (min-width: 1440px) {
+      @media (min-width: 1024px) {
         .content__blog .blog-view .blog-head {
           display: flex;
           justify-content: space-between;
           align-items: center; } }
-      @media (min-width: 768px) and (max-width: 1439px) {
+      @media (min-width: 768px) and (max-width: 1023px) {
         .content__blog .blog-view .blog-head {
           display: flex;
           justify-content: space-between;
@@ -205,10 +205,10 @@ body {
       font-family: "Avenir Black", sans-serif;
       margin-bottom: 10px;
       transition: all 0.2s; }
-      @media (min-width: 1440px) {
+      @media (min-width: 1024px) {
         .content__blog .blog-view .blog-list .list-head {
           font-size: 22px; } }
-      @media (min-width: 768px) and (max-width: 1439px) {
+      @media (min-width: 768px) and (max-width: 1023px) {
         .content__blog .blog-view .blog-list .list-head {
           font-size: 22px; } }
     .content__blog .blog-view .blog-list .list-date {
@@ -221,27 +221,27 @@ body {
       color: #008CEC;
       opacity: 0;
       transition: all 0.2s; }
-    @media (min-width: 1440px) {
+    @media (min-width: 1024px) {
       .content__blog .blog-view .blog-list {
         margin-top: 30px; } }
-    @media (min-width: 768px) and (max-width: 1439px) {
+    @media (min-width: 768px) and (max-width: 1023px) {
       .content__blog .blog-view .blog-list {
         margin-top: 30px; } }
-    @media (min-width: 1440px) {
+    @media (min-width: 1024px) {
       .content__blog .blog-view {
         max-width: 100vw;
         height: calc(100vh - 80px);
         padding: 50px 200px; } }
-    @media (min-width: 768px) and (max-width: 1439px) {
+    @media (min-width: 768px) and (max-width: 1023px) {
       .content__blog .blog-view {
         max-width: 100vw;
         height: calc(100vh - 80px);
         padding: 50px 100px; } }
-  @media (min-width: 1440px) {
+  @media (min-width: 1024px) {
     .content {
       width: calc(100% - 80px);
       margin-left: 80px; } }
-  @media (min-width: 768px) and (max-width: 1439px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     .content {
       width: calc(100% - 80px);
       margin-left: 80px; } }
@@ -271,10 +271,10 @@ body {
       transform: rotate(135deg);
       top: calc(35%);
       border: 4px solid #000000; }
-  @media (min-width: 1440px) {
+  @media (min-width: 1024px) {
     .tt-wrapper {
       display: block; } }
-  @media (min-width: 768px) and (max-width: 1439px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     .tt-wrapper {
       display: block; } }
 
@@ -296,7 +296,7 @@ body {
     position: relative;
     font-family: "Avenir", sans-serif;
     margin-top: 30px; }
-    @media (min-width: 1440px) {
+    @media (min-width: 1024px) {
       .btn-greeting {
         margin-top: 40px; } }
 

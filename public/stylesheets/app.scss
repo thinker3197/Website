@@ -1,5 +1,5 @@
 $tablet-width: 768px;
-$desktop-width: 1440px;
+$desktop-width: 1024px;
 $head-font: 'Avenir Black',
 sans-serif;
 $sub-font: 'Avenir',
@@ -58,8 +58,8 @@ body {
     z-index: 123;
     .navbar__list {
       .list-item {
-        width: 25%;
-        padding: 3%;
+        width: 35%;
+        padding: 5%;
         text-align: center;
         &:hover {
           cursor: pointer;
