@@ -24,9 +24,11 @@
   },
   "homepage": "https://github.com/thinker3197/thinker3197.github.io#readme",
   "dependencies": {
-    "express": "^4.15.4"
+    "express": "^4.16.2",
+    "path": "^0.12.7"
   },
   "devDependencies": {
+    "node-sass-middleware": "^0.11.0",
     "nodemon": "^1.11.0"
   }
 }

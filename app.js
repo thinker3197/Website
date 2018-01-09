@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const sassMiddleware = require('node-sass-middleware');
 const path = require('path');
+
 const data = {
   totalCount: 5,
   currentCount: 5,
@@ -52,10 +53,10 @@ app.get('/blog', function(req, res) {
 });
 
 app.get('/api/posts', function(req, res) {
-  var query = res.query;
+  // var query = res.query;
 
-  query.from = query.from || 0;
-  query.to = query.to || data.totalCount;
+  // query.from = query.from || 0;
+  // query.to = query.to || data.totalCount;
 
   res.json(data);
 });
