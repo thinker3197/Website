@@ -1,4 +1,4 @@
-(function() {
+(function () {
   var root = 'http://localhost:3000';
   // var router = new Navigo(root);
 
@@ -7,12 +7,12 @@
     var $blogView = document.getElementById('js-blog-view');
     var $blogNav = document.getElementById('js-blog-nav');
 
-    page('/', function() {
+    page('/', function () {
       $blogView.classList.add('hidden');
       $blogNav.classList.remove('active');
       $homeView.classList.remove('hidden');
     });
-    page('/blog', function() {
+    page('/blog', function () {
       $blogView.classList.remove('hidden');
       $blogNav.classList.add('active');
       $homeView.classList.add('hidden');
@@ -52,33 +52,33 @@
     var $target = document.getElementsByClassName('tt--target');
 
     for (var i = 0; i < $target.length; ++i) {
-      $target[i].addEventListener('mouseover', function(e) {
+      $target[i].addEventListener('mouseover', function (e) {
         $tt.style.top = (e.target.offsetTop - 80) + 'px';
         $tt.style.left = (e.target.offsetLeft + 45) + 'px';
         $tt.lastElementChild.innerHTML = e.target.dataset.ttText;
         $tt.classList.remove('hidden');
       });
 
-      $target[i].addEventListener('mouseleave', function(e) {
+      $target[i].addEventListener('mouseleave', function (e) {
         $tt.classList.add('hidden');
       });
     }
   }
 
   function getBlogMetadata() {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
       const url = '/api/posts?from=0&to=5';
       const xhr = new XMLHttpRequest();
 
       xhr.open('GET', url);
-      xhr.onload = function() {
+      xhr.onload = function () {
         if (this.status >= 200 && this.status < 300) {
           resolve(xhr.response);
         } else {
           reject();
         }
       };
-      xhr.onerror = function() {
+      xhr.onerror = function () {
         reject();
       };
       xhr.send();
@@ -86,7 +86,7 @@
   }
 
   function populateBlog() {
-    getBlogMetadata().then(function(response) {
+    getBlogMetadata().then(function (response) {
       var blogs = JSON.parse(response).posts;
       var markup = '',
         $blogList = document.getElementById('js-blog-list');
@@ -102,13 +102,13 @@
       }
 
       $blogList.innerHTML = markup;
-    }, function() {
+    }, function () {
       console.error('Whoops! An error occured');
     });
   }
 
   function init() {
-    document.addEventListener("DOMContentLoaded", function(event) {
+    document.addEventListener("DOMContentLoaded", function (event) {
       activateRouter();
       activateNavbar();
       addGreetingListener();
